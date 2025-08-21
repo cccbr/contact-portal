@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev/svgjs" viewBox="0 0 800 800">
+    <g fill="none" stroke-width="6.5" stroke="hsl(40, 50%, 50%)" stroke-linecap="round">
+        <line x1="75" y1="400" x2="725" y2="400" transform="rotate(0, 400, 400)" opacity="0.98"></line>
+        <line x1="548" y1="400" x2="252" y2="400" transform="rotate(11, 400, 400)" opacity="0.27"></line>
+        <line x1="542.5" y1="400" x2="257.5" y2="400" transform="rotate(22, 400, 400)" opacity="0.65"></line>
+        <line x1="276" y1="400" x2="524" y2="400" transform="rotate(33, 400, 400)" opacity="0.19"></line>
+        <line x1="715.5" y1="400" x2="84.5" y2="400" transform="rotate(44, 400, 400)" opacity="0.37"></line>
+        <line x1="70.5" y1="400" x2="729.5" y2="400" transform="rotate(55, 400, 400)" opacity="0.49"></line>
+        <line x1="533.5" y1="400" x2="266.5" y2="400" transform="rotate(66, 400, 400)" opacity="0.81"></line>
+        <line x1="646" y1="400" x2="154" y2="400" transform="rotate(77, 400, 400)" opacity="0.44"></line>
+        <line x1="555.5" y1="400" x2="244.5" y2="400" transform="rotate(88, 400, 400)" opacity="0.76"></line>
+        <line x1="425" y1="400" x2="375" y2="400" transform="rotate(99, 400, 400)" opacity="0.91"></line>
+        <line x1="58" y1="400" x2="742" y2="400" transform="rotate(110, 400, 400)" opacity="0.81"></line>
+        <line x1="486" y1="400" x2="314" y2="400" transform="rotate(121, 400, 400)" opacity="0.43"></line>
+        <line x1="228.5" y1="400" x2="571.5" y2="400" transform="rotate(132, 400, 400)" opacity="0.99"></line>
+        <line x1="462.5" y1="400" x2="337.5" y2="400" transform="rotate(143, 400, 400)" opacity="0.35"></line>
+        <line x1="599" y1="400" x2="201" y2="400" transform="rotate(154, 400, 400)" opacity="0.27"></line>
+        <line x1="170.5" y1="400" x2="629.5" y2="400" transform="rotate(165, 400, 400)" opacity="0.63"></line>
+        <line x1="139" y1="400" x2="661" y2="400" transform="rotate(176, 400, 400)" opacity="0.88"></line>
+        <line x1="536" y1="400" x2="264" y2="400" transform="rotate(187, 400, 400)" opacity="0.22"></line>
+        <line x1="485" y1="400" x2="315" y2="400" transform="rotate(198, 400, 400)" opacity="1.00"></line>
+        <line x1="485.5" y1="400" x2="314.5" y2="400" transform="rotate(209, 400, 400)" opacity="0.61"></line>
+        <line x1="230" y1="400" x2="570" y2="400" transform="rotate(220, 400, 400)" opacity="0.33"></line>
+        <line x1="211.5" y1="400" x2="588.5" y2="400" transform="rotate(231, 400, 400)" opacity="0.59"></line>
+        <line x1="601.5" y1="400" x2="198.5" y2="400" transform="rotate(242, 400, 400)" opacity="0.84"></line>
+        <line x1="187" y1="400" x2="613" y2="400" transform="rotate(253, 400, 400)" opacity="0.59"></line>
+        <line x1="592" y1="400" x2="208" y2="400" transform="rotate(264, 400, 400)" opacity="0.35"></line>
+        <line x1="414" y1="400" x2="386" y2="400" transform="rotate(275, 400, 400)" opacity="0.29"></line>
+        <line x1="179.5" y1="400" x2="620.5" y2="400" transform="rotate(286, 400, 400)" opacity="0.37"></line>
+        <line x1="546.5" y1="400" x2="253.5" y2="400" transform="rotate(297, 400, 400)" opacity="0.38"></line>
+        <line x1="487.5" y1="400" x2="312.5" y2="400" transform="rotate(308, 400, 400)" opacity="0.55"></line>
+        <line x1="68.5" y1="400" x2="731.5" y2="400" transform="rotate(319, 400, 400)" opacity="0.32"></line>
+        <line x1="111" y1="400" x2="689" y2="400" transform="rotate(330, 400, 400)" opacity="0.08"></line>
+        <line x1="619.5" y1="400" x2="180.5" y2="400" transform="rotate(341, 400, 400)" opacity="0.29"></line>
+        <line x1="366" y1="400" x2="434" y2="400" transform="rotate(352, 400, 400)" opacity="0.90"></line>
+    </g>
+</svg>

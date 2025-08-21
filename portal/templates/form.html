@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>We All Bellringing</title>
+    <meta name="author" content="Central Council of Church Bell Ringers" />
+    <meta name="description" content="Learn about bell ringing" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="{{ url_for('static', path='/tachyons/style.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/tachyons/layout.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', path='/tachyons/tachyons.min.css') }}" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.7.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/additional-methods.min.js"></script>
+    <script type="text/javascript">
+        $("#enquiryForm").validate({
+            rules: {
+                previousDetails: {
+                    required: function(element) {
+                        return $("#existing").is(":checked");
+                    }
+                },
+                phone: {
+                    require_from_group: [1, ".contact-group"]
+                },
+                email: {
+                    require_from_group: [1, ".contact-group"]
+                },
+                existing_experience: {
+                    required: function(element) {
+                        return $("#existing").is(":checked");
+                    }
+                },
+
+            },
+            submitHandler: function(form) {
+                $(form).ajaxSubmit();
+            },
+            errorPlacement: function(error, element) {
+                error.appendTo(element.parent().find(".error-container"));
+            },
+            invalidHandler: function(event, validator) {
+                // 'this' refers to the form
+                var errors = validator.numberOfInvalids();
+                if (errors) {
+                    var message = errors == 1
+                        ? 'You missed 1 field. It has been highlighted'
+                        : 'You missed ' + errors + ' fields. They have been highlighted';
+                    $("div.error span").html(message);
+                    $("div.error").show();
+                } else {
+                    $("div.error").hide();
+                }
+            }
+        });
+
+
+    </script>
+
+</head>
+<body class="bg-white-10 black-70 pa1 sans-serif w-100">
+    <header class="full pbgcolor swish text-standout dilute">
+        <blockquote class="text-white">
+            The joyous sound of<br />
+            <em class="textgrey">the world's biggest</em><br />
+            musical instrument
+        </blockquote>
+    </header>
+    <main class="cf">
+        <div class="fl w-50 bg-near-white tc">
+            <img src="static/ringer.jpg" width="600px" />
+        </div>
+        <div class="fl w-50 bg-light-gray">
+            <form action="/" method="post" enctype="multipart/form-data" class="">
+                <div class="f4 mv2 ph3 cf">
+                    <label for="name" class="fl w-20 mv2 ph3">Name:</label>
+                    <input id="name" type="text" name="name" placeholder="Name" class="fl w-60  mv2 ph3" minlength="4" required/>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="location" class="fl w-20 mv2 ph3">Location:</label>
+                    <input id="location" class="fl w-60 mv2 ph3" type="text" name="location" placeholder="Location" minlength="4" required/>
+                </div>
+<!--                <div class="f4 mv2 ph3 cf">-->
+<!--                    <div class="fl w-100 mv2 ph3">Ringing is an inclusive hobby, if you have any needs</div>-->
+<!--                    <label for="needs" class="fl w-20 mv2 ph3">Supportive Needs:</label>-->
+
+<!--                    Accommodation-->
+<!--                    Add details-->
+<!--                    <input id="needs" name="" class="fl w-60 mv2 ph3" type="text" placeholder="Supportive Needs" />-->
+<!--                </div>-->
+                <div class="f4 mv2 ph3 cf custom-select">
+                    <label for="age" class="fl w-20 mv2 ph3" hidden="hidden">Age Group</label>
+                    <select id="age" class="fl w-60 mv2 ph3" type="text" name="age" required>
+                        <option selected="true" value="">Age Group</option>
+                        <option value="Under16">Under 16</option>
+                        <option value="16-20">16-20</option>
+                        <option value="20-30">20-30</option>
+                        <option value="30-50">30-50</option>
+                        <option value="50+">50+</option>
+                        <option value="declined">Prefer not to say</option>
+                    </select>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="phone" class="fl w-20 mv2 ph3">Phone No.</label>
+                    <input id="phone" class="fl w-60 mv2 ph3" type="text" name="phone"/>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="email" class="fl w-20 mv2 ph3">E-mail</label>
+                    <input id="email" class="fl w-60 mv2 ph3" type="email" name="email">
+                </div>
+                <div class="f4 mv2 ph3 cf  custom-select">
+                    <label for="contactpref" class="fl w-20 mv2 ph3" hidden="hidden">Preferred Contact</label>
+                    <select id="contactpref" name="contactpref" class="fl w-60 mv2 ph3" required>
+                        <option value="">Preferred Contact</option>
+                        <option value="phone">Phone</option>
+                        <option value="email">E-mail</option>
+
+                    </select>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="existing" class="fl w-85 mv2 ph3">Have you any previous experience of ringing?</label>
+                    <input id="existing" class="fl w-10 mv2 ph0" type="checkbox" />
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="existing_experience" class="fl w-40 mv2 ph3">Previous Experience Detail</label>
+                    <input id="existing_experience" class="fl w-50 mv2 ph3" type="text" name="existing_experience" aria-describedby="existing-desc" />
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <div class="fl fw-100 f3 b">Consent</div>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="confirm_data" class="fl w-80">Are you happy for us to store your personal information?</label>
+                    <div class="fl w-10">
+                        <input id="confirm_data"  type="checkbox" name="confirm_data" aria-describedby="confirm-desc" required/>
+                    </div>
+                </div>
+                <div class="f4 mv2 ph3 cf">
+                    <label for="allow_contact" class="fl w-80">Are you happy for us and trusted partners to contact you?</label>
+                    <div class="fl w-10">
+                        <input id="allow_contact"  type="checkbox" name="allow_contact" aria-describedby="allow-desc" required/>
+                    </div>
+                </div>
+                <div class="fl w-100 cf">
+                    <div class="fl w-40">&nbsp;</div>
+                    <input type="submit" value="Send" class="br-pill dim grow tscolor f4 fl w-20"/>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer class="bggrey">
+        <div class="fl w-20 tc bggrey textgrey2">
+            <ul class="nav textgrey2">
+                <li><a href="" class="">Home</a></li>
+                <li><a href="" class="">About</a></li>
+                <li><a href="" class="">Events</a></li>
+                <li><a href="" class="">Resources</a></li>
+                <li><a href="" class="">Contact</a></li>
+            </ul>
+        </div>
+        <div class="fl w-50 tc bggrey">
+                <ul class="nav textgrey2" style="font-size: larger; font-weight: bolder;">
+                    <li style="margin: 1em 5em;"><a href="">What is Bell Ringing</a></li>
+                    <li style="margin: 1em 5em;"><a href="">Becoming a Bell Ringer</a></li>
+                    <li style="margin: 1em 5em;"><a href="">Your Bell Ringing Journey</a></li>
+                </ul>
+        </div>
+        <div class="fl w-25 tc bggrey">
+            <div>&nbsp;</div>
+            <div>&copy;Central Council of Church Bell Ringers 2025</div>
+            <div></div>
+        </div>
+        <div class="cf">&nbsp;
+        </div>
+    </footer>
+
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+# Development Requriements
+black
+flake8
+pylint
+tox
+-r portal/requirements.txt
+-r test_portal/requirements.txt
