@@ -1,11 +1,17 @@
 """Jira Connection
 :author: Martyn B
 """
+import os
 from atlassian.jira import Jira as _Jira
 from dotenv import dotenv_values
 
-
-ENV = "portal/.env"  # .env.fake
+env = os.environ.get('ENV', None)
+if env == "PROD":
+    ENV = "portal/.env"
+elif env == "DEV":
+    ENV = "portal/.env.fake"
+else:
+    raise RuntimeError('Provide an ENV=DEV|PROD')
 
 
 def get_jira_client():

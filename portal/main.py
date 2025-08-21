@@ -1,6 +1,8 @@
 """ FastAPI Server
 """
 from __future__ import annotations
+
+import os.path
 from contextlib import asynccontextmanager
 from typing import Annotated
 from fastapi import FastAPI, Request, Depends
@@ -47,7 +49,7 @@ class FormData(BaseModel):# pylint: disable=too-few-public-methods
 
 SQLITE_FILENAME = "database.db"
 SQLITE_URL = f"sqlite:///{SQLITE_FILENAME}"
-
+BASE = os.path.basename(os.path.dirname(__file__))
 connect_args = {"check_same_thread": False}
 engine = create_engine(SQLITE_URL, connect_args=connect_args)
 
@@ -73,11 +75,11 @@ app = FastAPI()
 # use base path
 app.mount(
     "/static",
-    StaticFiles(directory="portal/static", follow_symlink=True, check_dir=False),
+    StaticFiles(directory=f"{BASE}/static", follow_symlink=True, check_dir=False),
     name="static",
 )
 
-templates = Jinja2Templates(directory="portal/templates")
+templates = Jinja2Templates(directory=f"{BASE}/templates")
 
 
 @asynccontextmanager
